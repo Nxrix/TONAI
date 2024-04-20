@@ -44,7 +44,7 @@ gpt.generate = async (input) => {
   messages = gpt.limitTokens(messages,2048-gpt.config.split(" ").length);
   messages.unshift({role:"system",content:gpt.config});
   try {
-    response = await fetch("https://nxrix.vercel.app/api/tonai/gpt.php",{
+    response = await fetch("https://nxrix.vercel.app/api/tonai_gpt.php",{
       method: "POST",
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
